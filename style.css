@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 
+nessa parte do código, o :root é utilizado para definir variáveis CSS globais que podem ser reutilizadas em todo o documento. As variáveis são definidas com a sintaxe --nome-da-variavel: valor; e podem ser acessadas usando var(--nome-da-variavel).
+*/
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile-dark.png);
+  --stoke-color: rgba(255, 255, 255, 0.5);
+  --surface-color: rgba(255, 255, 255, 0.1);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(255, 255, 255, 0.2);
+  --switch-bg-url: url(./assets/moon-stars.svg);
+}
+
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.png);
+  --stoke-color: rgba(0, 0, 0, 0.5);
+  --surface-color: rgba(0, 0, 0, 0.05);
+  --surface-color-hover: rgba(0, 0, 0, 0.02);
+  --highlight-color: rgba(0, 0, 0, 0.1);
+  --switch-bg-url: url(./assets/sun.svg);
+}
+
+body {
+  /*
+  background-image: url(./assets/bg-mobile.jpg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  */
+
+  /* background: color (quando aplicável) image repeat position / size; */
+  background: var(--bg-url) no-repeat top center / cover;
+}
+
+body * {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-color);
+}
+
+#container {
+ width: 360px;
+ margin: 56px auto 0px;
+ padding: 0px 24px;
+}
+
+/* profile */
+
+#profile {
+  text-align: center;
+  padding: 24px;
+}
+
+#profile img {
+  /*
+  caso nesse seletor (#profile img) que contém um elemento in-line (img) tenha uma informação fazendo com que ele se torne um elemento do tipo block, a imagem não será alinhada pois vai estar tomando todo o preenchimento da tela, impossibilitando qualquer tipo de tentativa de alinhamento
+  */
+  width: 112px;
+}
+
+#profile p {
+  font-weight: 500;
+  /*
+  essa propriedade é utilizada para definir o tamanho da fonte, mas ela não necessariamente precisa estar neste código, pois 16px e o padrão utilizado na maioria dos navegadores */
+  font-size: 16px;
+
+  line-height: 24px;
+  margin-top: 8px;
+}
+
+/* switch */
+
+#switch {
+  position: relative;
+  width: 64px;
+  margin: 4px auto;
+}
+
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white var(--switch-bg-url) no-repeat center;
+  border: 0;
+  border-radius: 50%;
+
+  /*
+  o position absolute é utilizado para posicionar o botão de forma absoluta em relação ao seu elemento pai, que nesse caso é a div com o id switch. O right: 50% é utilizado para posicionar o botão no centro horizontal da div pai. O z-index: 1 é utilizado para garantir que o botão fique acima de outros elementos na página (basicamente é um gerenciador de camadas). O transform: translateY(-50%) é utilizado para centralizar o botão verticalmente em relação à div pai
+  */
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+
+.light #switch button {
+  right: 0;
+  left: initial;
+}
+
+#switch span {
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--surface-color);
+  border: 1px solid var(--stoke-color);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 999px;
+}
+
+/* lista de links */
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px 0px;
+}
+
+ul li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 24px;
+
+  /* rgba = Red Green Blue Alpha, sendo o alpha a opacidade do elemento */
+  background: var(--surface-color);
+  border: 1px solid var(--stoke-color);
+  border-radius: 8px;
+
+  /*
+  o backdrop-filter é utilizado para aplicar um efeito de desfoque no fundo do elemento, criando uma aparência de vidro fosco. O -webkit-backdrop-filter é a versão específica para navegadores baseados em WebKit, como o Safari.
+  */
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+
+/* esse seletor também pode ser chamado / classificado como pseudo-selector, pois ele é utilizado para definir um estilo quando o usuário interage com o elemento */
+ul li a:hover {
+  background: var(--surface-color-hover);
+  border: 1.5px solid var(--text-color);
+}
+
+/* social links */
+#social-links {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0px;
+  font-size: 24px;
+}
+
+#social-links a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+
+  transition: background 0.2s;
+  border-radius: 50%;
+}
+
+#social-links a:hover {
+  background: var(--highlight-color);
+  padding: 16px;
+}
+
+footer {
+  text-align: center;
+  padding: 24px 0px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.65);
+}

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projeto</title>
+  <link rel="stylesheet" href="./style.css"/>
+</head>
+<body>
+  <div id="container">
+    <div id="profile">
+      <img src="./assets/image-dark.png" alt="Imagem de um cadeado azul representando que o site se encontra em modo escuro"/>
+      <p>Luan Felipe</p>
+    </div>
+
+    <!--- adicionei essa div com o id switch para criar um botão que vai alternar entre o modo claro e escuro do site. O botão está dentro da div para que possamos estilizar ele de forma mais fácil --->
+    <div id="switch" onclick="toggleMode()">
+      <button>
+      </button>
+
+      <span>
+      </span>
+    </div>
+    
+    <!---- adicionei a tag <ul> para criar uma lista não ordenada de links de redes sociais. Cada link está dentro de um item da lista <li>. caso eu quisesse que a lista fosse ordenada, ou seja, em ordem numérica, eu utilizaria a tag <ol> para ficar com números na frente de cada link --->
+    <ul>
+      <li>
+        <a href="https://www.linkedin.com/in/luan-felipe-50015930b/" target="_blank">Linkedin</a>
+      </li>
+
+      <li>
+        <a href="https://github.com/iluanfelipe-https" target="_blank">Github</a>
+      </li>
+
+      <li>
+        <a href="https://www.instagram.com/luanfw__/" target="_blank">Instagram</a>
+      </li>
+
+      <li>
+        <a href="https://www.tiktok.com/@iluankz" target="_blank">Tiktok</a>
+      </li>
+    </ul>
+    
+    <div id="social-links">
+      <a href="https://www.linkedin.com/in/luan-felipe-50015930b/" target="_blank">
+        <ion-icon name="logo-linkedin"></ion-icon>
+      </a>
+
+      <a href="https://github.com/iluanfelipe-https" target="_blank">
+        <ion-icon name="logo-github"></ion-icon>
+      </a>
+
+      <a href="https://www.instagram.com/luanfw__/" target="_blank">
+        <ion-icon name="logo-instagram"></ion-icon>
+      </a>
+
+      <a href="https://www.tiktok.com/@iluankz" target="_blank">
+        <ion-icon name="logo-tiktok"></ion-icon>
+      </a>
+    </div>
+
+    <!--- o footer e utilizado normalmente para exibir informações de rodapé, como direitos autorais ou links úteis --->
+    <footer>
+      Site desenvolvido como projeto de estudo, inspirado na interface da <a href="https://www.rocketseat.com.br/"> RocketSeat</a>
+    </footer>
+  </div>
+
+  <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@8.0.13/dist/ionicons/ionicons.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
